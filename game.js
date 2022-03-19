@@ -1,33 +1,3 @@
-EMAHAL
-Menu
-JAVASCRIPT AND HTML5 CANVAS GAME TUTORIAL CODE
-This page shows you the code you need to make your own game using JavaScript and the HTML5 canvas. The game involves a player (hero) catching an enemy (monster) as many times as possible in a 30 second time limit. This version of the game has been modified from the tutorial at Lost Decade Games who have shared the code and encouraged users to modify and share it.
-
-All of the JavaScript below contains comments which explain what each part of the code does and how it works. Make sure you read the comments to understand the code and before changing any of the code. All comments in the code below start with two forward-slashes. For example: //this is a comment. You will need to create a HTML file (eg. index.html), a JavaScript file (game.js), and you will need to make an images folder with three images – the background, the monster sprite, and the hero sprite.
-
-Here is what the game looks like (click here to play it):
-
-Game screenshot
-Game screenshot (click the image to launch the game)
-Here is the code for the index.html file:
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Catch the monster</title>
-  </head>
-  <body>
-    <script src="game.js"></script>
-  </body>
-</html>
-And here is the code for the game.js JavaScript file:
-
-/*
-  Code modified from:
-  http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/
-  using graphics purchased from vectorstock.com
-*/
 // Create the canvas for the game to display in
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
