@@ -3,51 +3,26 @@
 </head>
 <style>
 </style>
+<canvas is="canvas" width="600" heigth="300"></canvas>
 <script>
-let canvas = document.getElementById('canvas'),
-      x = 0, y = 15, q = 25,
-      xMax = canvas.clientWidth - q,
-      speed = xMax / 1000,
-      lastTimestamp = -1;
-
-  function animate(timestamp) {
-    // Ab dem zweiten Aufruf beginnt die Animation, beim ersten Aufruf
-    // wird an der Startposition gezeichnet.
-    if (letzterTimestamp > 0) {
-       // Neue X-Position berechnen
-       let delta_x = (timestamp - lastTimestamp ) * speed;
-       x += delta_x;
-       // Gültigen X-Bereich verlassen? Wenden
-       if(x < 0) {
-          reverse(0);
-       }
-       if (x > xMax) {
-          reverse(xMax);
-       }
-    }  
-    // Quadrat an der neuen Position zeichnen
-    draw(x, y, q);
-    // Zeitpunkt merken um im nächsten Schritt die Zeitdifferenz zu bestimmen
-    lastTimestamp = timestamp;
-    // Aufruf für den nächsten Animationsframe registrieren
-    requestAnimationFrame(animate);
-  }
-  function reverse(mirrorX) {
-     x = 2*mirrorX - x;
-     speed = -speed;
-  }
-  function draw(squareX, squareY, squareSize) {
-    let context = canvas.getContext('2d');
-
-    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.fillStyle = '#dfac20';
-    context.fillRect(x, y, squareSize, squareSize);
-    context.lineWidth = 3;
-    context.strokeStyle = '#3983ab';
-    context.strokeRect(x, y, squareSize, squareSize);	
-  }
-
-  requestAnimationFrame(animate);
+var canvas =
+document.getElementById('canvas');
+var ctx =
+canvas.getContext('2D');
+var ball {
+   x: 100,
+   y: 100,
+   radius: 25
+   color: "blue"
+   draw: function() 
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
+      ctx.closePath();
+      ctx.fillStyle = this.color;
+      ctx.fill();
+   }
+};
+ball.draw() 
 </script>
 <body>
 </body>
