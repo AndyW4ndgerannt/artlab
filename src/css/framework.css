@@ -3,7 +3,7 @@ body {font-family: Arial, Helvetica, sans-serif}
 
 .bg-img {
   /* The image used */
-  background-image: url("img_nature.jpg");
+  background-image: url("https://raw.githubusercontent.com/AndyW4ndgerannt/artlab/main/images/wallpaper.jpg");
 
   min-height: 380px;
 
