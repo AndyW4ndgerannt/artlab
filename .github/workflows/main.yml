@@ -44,7 +44,4 @@ jobs:
         # Runs a single command using the runners shell
       - name: Run a one-line script
         run: ./run.sh
-        
-         # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: runs-on: self-hosted
+      
