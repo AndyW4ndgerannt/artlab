@@ -2,3 +2,12 @@ h1 {
   color: blue;
   margin-left: 40px;
 }
+p {
+  text-align: center;
+}
+p {
+  padding-top: 25px 75px 50px 100px;
+}
+body {
+  background-image: url("");
+}
