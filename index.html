@@ -2,18 +2,11 @@
 <html>
 <html lang="en"
    <head>
-      <meta Charles="utf-8" >
-      <title>ArtLab</title>
-      <meta name="description" content="A basic Canvas Game">
+      <meta Charles="UTF-8" >
+      <title>ArtLab Canvas Game Framework</title>
+      <meta name="description" content="A basic Canvas Game framework">
       <meta name="author" content="Andy Ge">
-      <style>
-                  #test {
-            width:100px;
-            height:100px;
-            margin: 0px auto;
-         }
-      </style>
-         <script script = "text/javascript">
+            <script script = "text/javascript">
             function drawShape() {
                
                // get the canvas element using the DOM
@@ -74,10 +67,14 @@
          }
       </script>
    </head>
-    
-   <body id = "test" onload = "drawShape();">
-      <canvas id = "mycanvas"></canvas>
-   <body id = "background" onload = "drawShape();">
-      <canvas id = "mycanvas1"></canvas>
+      <style>
+                  #test {
+            width:100px;
+            height:100px;
+            margin: 0px auto;
+         }
+      </style>
+   <body>
+      <canvas id="viewport" width="640" height="480"></canvas>
    </body>
 </html>
