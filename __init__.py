@@ -3,6 +3,8 @@ from flask import Flask, session, redirect, url_for, escape, request, g
 from flask import render_template
 from sqlite3 import sql
 from flask_sijax import sijax
+from yourapplication import app as application
+
 
 app = Flask(__name__)
 
