@@ -8,7 +8,6 @@
       <meta name="description" content="A basic Canvas Game framework">
       <meta name="author" content="Andy Ge">
       <link rel="stylesheet" href="src/css/framework.css">
-      <base href="/" src="/index.html" target="/index.html">
    </head>
    <body>
       <script src="game.js"></script>
@@ -17,8 +16,8 @@
          <div class="container">
             <div class="top-nav">
                <li>
-                  <ul><a href="/home">Home</a></ul>
-                  <ul><a href="/canvas", type="text/html" src="canvas.html">Canvas</a></ul>
+                  <ul><a src={ % 'home.html' % }, type="text/html", href="/home">Home</a></ul>
+                  <ul><a src={ % 'canvas.html' % }, type="text/html", href="/canvas">Canvas</a></ul>
                   <ul><a href="/images">Examples</a></ul>
                      <li><a href="/tree">Tree</a></li>
                </li>
