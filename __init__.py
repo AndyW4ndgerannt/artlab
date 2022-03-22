@@ -1,8 +1,15 @@
-from flask import Flask, session, redirect, url_for, escape, request
+import os
+from flask import Flask, session, redirect, url_for, escape, request, g
 from flask import render_template
 from sqlite3 import sql
+from flask_sijax import sijax
 
+path = os.path.join('.', os.path.dirname(__file__), 'static/js/sijax/')
 app = Flask(__name__)
+
+app.config['SIJAX_STATIC_PATH'] = path
+app.config['SIJAX_JSON_URI'] = '/static/js/sijax/json2.js'
+flask_sijax.Sijax(app)
 
 @app.route('/')
 def index():
