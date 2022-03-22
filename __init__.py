@@ -1,19 +1,16 @@
 from flask import Flask, session, redirect, url_for, escape, request
 from flask import render_template
+from sqlite3 import sql
 
 app = Flask(__name__)
 
-@app.route('/',methods = ['POST', 'GET'])
-def  index():
-   if request.method == 'POST':
-      index = request.form
-      return render_template("index.html",index = index)
+@app.route('/')
+def index():
+   return render_template('index.html')
     
-@app.route('/home', methods = ['POST', 'GET'])
+@app.route('/home')
 def home():
-  if request.method == 'POST':
-    home = request.form
-    return render_template("home.hmtl",home = home)
+   return render_template('home.html')
 
 @app.route('/setcookie', methods = ['POST', 'GET'])
 def setcookie():
@@ -44,4 +41,4 @@ def  images():
   
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(host = '0.0.0.0', debug = True)
