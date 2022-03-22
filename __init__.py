@@ -14,6 +14,21 @@ def home():
     home = request.form
     return render_template("home.hmtl",home = home)
 
+@app.route('/setcookie', methods = ['POST', 'GET'])
+def setcookie():
+   if request.method == 'POST':
+   user = request.form['nm']
+   
+   resp = make_response(render_template('readcookie.html'))
+   resp.set_cookie('userID', user)
+   
+   return resp
+
+@app.route('/getcookie')
+def getcookie():
+   name = cookies.get('userID')
+   return ()
+
 @app.route('/canvas',methods = ['POST', 'GET'])
 def canvas():
    if request.method == 'POST':
