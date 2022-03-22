@@ -4,10 +4,11 @@ from flask import render_template
 from sqlite3 import sql
 from flask_sijax import sijax
 
-path = os.path.join('.', os.path.dirname(__file__), 'static/js/sijax/')
 app = Flask(__name__)
 
+path = os.path.join('.', os.path.dirname(__file__), 'static/js/sijax/')
 app.config['SIJAX_STATIC_PATH'] = path
+
 app.config['SIJAX_JSON_URI'] = '/static/js/sijax/json2.js'
 flask_sijax.Sijax(app)
 
@@ -15,7 +16,7 @@ flask_sijax.Sijax(app)
 def index():
    return render_template('index.html')
     
-@app.route('/home')
+@app.route('/home', methods = ['POST', 'GET'])
 def home():
    return render_template('home.html')
 
@@ -29,22 +30,20 @@ def setcookie():
    
    return resp
 
-@app.route('/getcookie')
+@app.route('/getcookie', methods = ['POST', 'GET'])
 def getcookie():
    name = cookies.get('userID')
    return ()
 
-@app.route('/canvas',methods = ['POST', 'GET'])
+@app.route('/canvas', methods = ['POST', 'GET'])
 def canvas():
-   if request.method == 'POST':
-      canvas = request.form
-      return render_template("canvas.html",canvas = canvas)  
+   return render_template('canvas.html')
 
-@app.route('/images',methods = ['POST', 'GET'])
-def  images():
-   if request.method == 'POST':
-      images = request.form
-      return render_template("images.html",images = images)
+
+@app.route('/images', methods = ['POST', 'GET'])
+def images():
+   return render_template('images.html')
+
   
 
 if __name__ == '__main__':
